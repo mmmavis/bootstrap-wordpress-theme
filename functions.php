@@ -6,4 +6,16 @@ function add_bootstrap_scripts_with_jquery() {
 }
 add_action( 'wp_enqueue_scripts', 'add_bootstrap_scripts_with_jquery' );
 
+// Register custom nav menus: http://codex.wordpress.org/Navigation_Menus
+function register_site_menus() {
+  register_nav_menus(
+    array(
+      'header-nav' => __( 'Header Nav' )
+    )
+  );
+}
+add_action( 'init', 'register_site_menus' );
+
+
+
 ?>

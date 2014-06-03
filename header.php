@@ -21,12 +21,16 @@
         </div>
         <div class="collapse navbar-collapse" id="site-nav">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="<?php echo home_url(); ?>">Home</a></li>
-            <li><a href="">Page 2</a></li>
-            <li><a href="">Page 3</a></li>
-            <li><a href="">Page 4</a></li>
-            <li><a href="">Page 5</a></li>
-            <li><a href="">Page 6</a></li>
+            <?php
+              if (has_nav_menu('header-nav')) {
+                wp_nav_menu(array(
+                  'theme_location' => 'header-nav',
+                  'container' => false,
+                  'items_wrap' => '%3$s',
+                  'depth' => 1,
+                ));
+              }
+            ?>
           </ul>
         </div>
       </div>
